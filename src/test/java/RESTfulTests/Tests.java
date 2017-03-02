@@ -1,5 +1,6 @@
 package RESTfulTests;
 
+import Utilities.JSONUtilities;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -16,7 +17,7 @@ import static org.hamcrest.Matchers.*;
 /**
  * Created by RXC8414 on 2/28/2017.
  */
-public class Tests extends TestListenerAdapter{
+public class Tests extends JSONUtilities{
     String api = "http://api.weather.com/v2/astro?geocode=33.99,-85&date=20150102&days=3&format=json&apiKey=3d498bd0777076fb2aa967aa67114c7e";
 
 
@@ -35,7 +36,8 @@ public class Tests extends TestListenerAdapter{
     //Print the Response Body for the API GET request
     @Test
     public void printResponseAPI(){
-        get(api).then().extract().response().prettyPrint();
+        parseJSONIntoHashMap(get(api).then().extract().response().asString());
+        //get(api).then().extract().response().prettyPrint();
         //System.out.println(strAPI);
     }
 
