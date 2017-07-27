@@ -63,7 +63,7 @@ public class Tests extends JSONUtilities{
     @Test(dataProvider="geocodes")
     public void verifyDPStatusCode(String testName, String geocode){
         try{
-            api = "http://api.weather.com/v2/astro?geocode="+geocode+"&date=20150102&days=3&format=json&apiKey=3d498bd0777076fb2aa967aa67114c7e";
+            api = "";
             get(api).then().statusCode(201);
             System.out.println(testName+" Passed");
         }
