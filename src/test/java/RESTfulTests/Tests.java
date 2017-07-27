@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.*;
  * Created by RXC8414 on 2/28/2017.
  */
 public class Tests extends JSONUtilities{
-    String api = "http://api.weather.com/v2/astro?geocode=33.99,-85&date=20150102&days=3&format=json&apiKey=3d498bd0777076fb2aa967aa67114c7e";
+    String api = "";
 
 
     @DataProvider(name = "geocodes")
